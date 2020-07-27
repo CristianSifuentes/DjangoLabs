@@ -1,3 +1,4 @@
 from django.contrib import admin
+from adoption.models import Person
 
-# Register your models here.
+admin.site.register(Person)

@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from pet.models import Vaccine, Pet
+
+admin.site.register(Vaccine)
+admin.site.register(Pet)
+
+
