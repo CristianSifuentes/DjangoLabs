@@ -10,3 +10,5 @@ py -m pip install Django
 pip install psycopg2
 pip freeze django
 python manage.py makemigrations
+python manage.py migrate
+python manage.py shell

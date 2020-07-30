@@ -9,10 +9,10 @@ class Vaccine(models.Model):
 
 
 class Pet(models.Model):
-    folio = models.CharField(max_length=10, primary_key=True)
+    # folio = models.CharField(max_length=10, primary_key=True)
     name = models.CharField(max_length=50)
     gender = models.CharField(max_length=10)
     age = models.IntegerField()
     redemption_date = models.DateField()
     person = models.ForeignKey(Person, null=True, blank=True, on_delete=models.CASCADE)
-    vaccine = models.ManyToManyField(Vaccine)
+    vaccine = models.ManyToManyField(Vaccine, blank=True)
