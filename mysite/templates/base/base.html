@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <title>{% block title %} Document {% endblock %}</title>
 </head>
 <body>
@@ -17,5 +19,6 @@
     {% block footer %}
     <h5>This is a block for footer</h5>
     {% endblock %}
+
 </body>
 </html>
