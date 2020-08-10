@@ -8,3 +8,6 @@ class Person(models.Model):
     email = models.EmailField()
     address = models.TextField()
 
+    def __str__(self):
+         return '{} {}'.format(self.name, self.last_name)
+
