@@ -10,18 +10,28 @@
             <th>Age</th>
             <th>Redemption Date</th>
             <th>Person</th>
+            <th></th>
+
         </tr>
     </thead>
     <tbody>
         {% if pet %}
             {% for pets in pet %}
                 <tr>
-                    <td>{{ pets.id }}<td>
+                    <td>{{ pets.id }}</td>
                     <td>{{ pets.name }}</td>
                     <td>{{ pets.gender }}</td>
                     <td>{{ pets.age }}</td>
                     <td>{{ pets.redemption_date }}</td>
                     <td>{{ pets.person.name }} {{ pets.person.last_name }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="{% url 'pet_edit' id_pet=pets.id %}">
+                            Edit
+                        </a>
+                        <a class="btn btn-default" href="{% url 'pet_delete' id_pet=pets.id %}">
+                            delete
+                        </a>
+                    </td>
                 </tr>
             {% endfor %}
         {% else %}
