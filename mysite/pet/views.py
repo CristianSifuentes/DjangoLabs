@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.views.generic import ListView
 from pet.forms import PetForm
 from pet.models import Pet
 
@@ -40,3 +41,7 @@ def pet_delete(request, id_pet):
         pet.delete()
         return redirect('pet_list')
     return render(request, 'pet/pet_delete.html', { 'pet': pet })
+
+class PetList(ListView):
+    model = Pet
+    template_name = 'pet/pet_list.html'
