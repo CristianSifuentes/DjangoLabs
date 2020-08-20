@@ -25,10 +25,10 @@
                     <td>{{ pets.redemption_date }}</td>
                     <td>{{ pets.person.name }} {{ pets.person.last_name }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{% url 'pet_edit' id_pet=pets.id %}">
+                        <a class="btn btn-primary" href="{% url 'pet_edit' pk=pets.id %}">
                             Edit
                         </a>
-                        <a class="btn btn-default" href="{% url 'pet_delete' id_pet=pets.id %}">
+                        <a class="btn btn-default" href="{% url 'pet_delete' pk=pets.id %}">
                             delete
                         </a>
                     </td>

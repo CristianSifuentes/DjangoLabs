@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from pet.forms import PetForm
 from pet.models import Pet
+from django.urls import reverse, NoReverseMatch
 
 # Create your views here.
 def index(request):
@@ -45,3 +46,34 @@ def pet_delete(request, id_pet):
 class PetList(ListView):
     model = Pet
     template_name = 'pet/pet_list.html'
+    
+class PetCreate(CreateView):
+    model = Pet
+    form_class = PetForm
+    template_name = 'pet/pet_form.html'
+
+    def get_success_url(self):
+        return reverse('pet_list')
+
+class PetUpdate(UpdateView):
+    model = Pet
+    form_class = PetForm
+    template_name = 'pet/pet_form.html'
+
+    def get_absolute_url(self):
+        return reverse("pet:pet_form", kwargs={"pk": self.pk})
+    
+    def get_success_url(self):
+        return reverse('pet_list')
+    
+    
+class PetDelete(DeleteView):
+    model = Pet
+    form_class = PetForm
+    template_name = 'pet/pet_delete.html'
+
+    def get_absolute_url(self):
+        return reverse("pet:pet_delete", kwargs={"pk": self.pk})
+    
+    def get_success_url(self):
+        return reverse('pet_list')
