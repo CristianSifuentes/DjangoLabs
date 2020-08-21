@@ -10,4 +10,12 @@ class Person(models.Model):
 
     def __str__(self):
          return '{} {}'.format(self.name, self.last_name)
+     
+class AdoptionRequest(models.Model):
+    person = models.ForeignKey(Person, null=True, blank=True, on_delete=models.CASCADE)
+    pet_number = models.IntegerField()
+    comment = models.TextField()
+    
+
+
 

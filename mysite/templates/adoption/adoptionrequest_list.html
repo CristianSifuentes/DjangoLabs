@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Pet Number</th>
+            <th>Comment</th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% if object_list %}
+            {% for request in object_list %}
+                <tr>
+                    <td>{{ request.id }}</td>
+                    <td>{{ request.pet_number }}</td>
+                    <td>{{ request.comment }}</td>
+                    <td>
+                        <!-- <a class="btn btn-primary" href="{% url 'pet_edit' pk=pets.id %}">
+                            Edit
+                        </a>
+                        <a class="btn btn-default" href="{% url 'pet_delete' pk=pets.id %}">
+                            delete
+                        </a> -->
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+                 <tr>nothing for show</tr>
+        {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}
