@@ -4,10 +4,72 @@
 
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <br/>
-    {{ form2.as_p }}
-    <button type="submit">Save</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label for="{{ form2.name.name }}">{{ form2.name.label }}</label>
+                    {{ form2.name }}
+                </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label for="{{ form2.last_name.name }}">{{ form2.last_name.label }}</label>
+                    {{ form2.last_name }}
+                </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label for="{{ form2.age.name }}">{{ form2.age.label }}</label>
+                    {{ form2.age }}
+                </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label for="{{ form2.phone.name }}">{{ form2.phone.label }}</label>
+                    {{ form2.phone }}
+                </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label for="{{ form2.email.name }}">{{ form2.email.label }}</label>
+                    {{ form2.email }}
+                </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label for="{{ form2.address.name }}">{{ form2.address.label }}</label>
+                    {{ form2.address }}
+                </div>
+            </div>
+  
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label for="{{ form.pet_number.name }}">{{ form.pet_number.label }}</label>
+                    {{ form.pet_number }}
+                </div>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label for="{{ form.comment.name }}">{{ form.comment.label }}</label>
+                    {{ form.comment }}
+                </div>
+            </div>
+
+        </div>
+        <button type="submit" class="align-self-auto">Save</button>
+
+    </div>
+
+
+    <!-- {{ form.as_p }}
+     {{ form2.as_p }} -->
 </form>
 
 {% endblock %}
