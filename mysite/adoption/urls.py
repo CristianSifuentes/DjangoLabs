@@ -1,14 +1,13 @@
 from django.urls import path
 from adoption.views import index
-from adoption.views import AdoptionRequestList
+from adoption.views import AdoptionRequestList, AdoptionRequestCreate, AdoptionRequestUpdate, AdoptionRequestDelete
 
 urlpatterns = [
     path('', index, name='index'),
-    path('listadoptionrequest/', AdoptionRequestList.as_view(), name='requestadoption_list')
-
-    # path('add/', PetCreate.as_view(), name='pet_view'),
-    # path('edit/<int:pk>', PetUpdate.as_view(), name='pet_edit'),
-    # path('delete/<int:pk>', PetDelete.as_view(), name='pet_delete')
+    path('list/', AdoptionRequestList.as_view(), name='adoptionrequest_list'),
+    path('add/', AdoptionRequestCreate.as_view(), name='adoptionrequest_add'),
+    path('edit/<int:pk>', AdoptionRequestUpdate.as_view(), name='adoptionrequest_edit'),
+    path('delete/<int:pk>', AdoptionRequestDelete.as_view(), name='adoptionrequest_delete')
 
 
 ]

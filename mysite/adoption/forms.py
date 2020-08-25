@@ -30,21 +30,27 @@ class PersonForm(forms.ModelForm):
             'email': forms.Select(attrs={'class': 'form-control'}),
             'address' : forms.Select(attrs={'class': 'form-control'})
         }
-    
+
 class AdoptionRequestForm(forms.ModelForm):
-    
+
     class Meta:
         model = AdoptionRequest
-        
+
         fields = [
             'pet_number',
             'comment',
+            'person'
+
         ]
         labels = {
             'pet_number': 'Pet Number',
             'comment': 'Comment',
+            'person': 'Person'
+
         }
         widgets= {
             'pet_number': forms.TextInput(attrs={'class': 'form-control'}),
-            'comment': forms.Textarea(attrs={'class': 'form-control'})
+            'comment': forms.Textarea(attrs={'class': 'form-control'}),
+            'person': forms.Select(attrs={'class': 'form-control'})
+
         }

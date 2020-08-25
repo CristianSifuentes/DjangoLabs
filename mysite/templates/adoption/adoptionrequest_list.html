@@ -7,6 +7,7 @@
             <th>#</th>
             <th>Pet Number</th>
             <th>Comment</th>
+            <th>Person</th>
             <th></th>
 
         </tr>
@@ -18,13 +19,14 @@
                     <td>{{ request.id }}</td>
                     <td>{{ request.pet_number }}</td>
                     <td>{{ request.comment }}</td>
+                    <td>{{ request.person }}</td>
                     <td>
-                        <!-- <a class="btn btn-primary" href="{% url 'pet_edit' pk=pets.id %}">
+                         <a class="btn btn-primary" href="{% url 'adoptionrequest_edit' pk=request.id %}">
                             Edit
                         </a>
-                        <a class="btn btn-default" href="{% url 'pet_delete' pk=pets.id %}">
+                        <a class="btn btn-default" href="{% url 'adoptionrequest_delete' pk=request.id %}">
                             delete
-                        </a> -->
+                        </a>
                     </td>
                 </tr>
             {% endfor %}

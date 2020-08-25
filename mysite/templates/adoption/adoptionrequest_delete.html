@@ -4,9 +4,9 @@
 
 <form method="POST">
     {% csrf_token %}
-    <h3>Do you want delete {{ pet.name }}?</h3>
+    <h3>Do you want delete {{ adoptionrequest.name }}?</h3>
     <button type="submit">Delete</button>
-    <a class="btn btn-default" href="{% url 'pet_list' %}">
+    <a class="btn btn-default" href="{% url 'adoptionrequest_list' %}">
         Cancel
     </a>
 

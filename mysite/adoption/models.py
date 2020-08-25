@@ -16,6 +16,9 @@ class AdoptionRequest(models.Model):
     pet_number = models.IntegerField()
     comment = models.TextField()
     
+    def __str__(self):
+         return '{}'.format(self.comment)
+    
 
 
 
