@@ -24,11 +24,11 @@ class PersonForm(forms.ModelForm):
         }
         widgets= {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'address': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'age': forms.TextInput(attrs={'class': 'form-control'}),
             'phone': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.Select(attrs={'class': 'form-control'}),
-            'address' : forms.Select(attrs={'class': 'form-control'})
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'address' : forms.Textarea(attrs={'class': 'form-control'})
         }
 
 class AdoptionRequestForm(forms.ModelForm):
@@ -39,18 +39,18 @@ class AdoptionRequestForm(forms.ModelForm):
         fields = [
             'pet_number',
             'comment',
-            'person'
+            # 'person'
 
         ]
         labels = {
             'pet_number': 'Pet Number',
             'comment': 'Comment',
-            'person': 'Person'
+            # 'person': 'Person'
 
         }
         widgets= {
             'pet_number': forms.TextInput(attrs={'class': 'form-control'}),
             'comment': forms.Textarea(attrs={'class': 'form-control'}),
-            'person': forms.Select(attrs={'class': 'form-control'})
+            # 'person': forms.Select(attrs={'class': 'form-control'})
 
         }
